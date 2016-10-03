@@ -8,7 +8,6 @@ num_files = 0
 
 def tree(r, level):
 
-
     global num_dirs
     global num_files
     lst1 = os.listdir(r)
@@ -23,10 +22,10 @@ def tree(r, level):
                 num_dirs = num_dirs + 1
                 if i == len(lst2):
                     print('{}`-- {}'.format(level, item))
-                    tree((r + '/' + item),level + '    ')
+                    tree((r + '/' + item), level + '    ')
                 else:
                     print('{}|-- {}'.format(level, item))
-                    tree((r + '/' + item),level+'|   ')
+                    tree((r + '/' + item), level + '|   ')
             else:
                 num_files = num_files + 1
                 if i == len(lst2):
@@ -34,16 +33,15 @@ def tree(r, level):
                 else:
                     print('{}|-- {}'.format(level, item))
 if __name__ == '__main__':
-#    subprocess.run(['tree'] + sys.argv[1:])
     if len(sys.argv) == 2:
         path = sys.argv[1]
-        print  (path)
+        print(path)
         tree(path, '')
-        print  (num_dirs, 'directories,', num_files, 'files')
+        print(num_dirs, 'directories,', num_files, 'files')
     elif len(sys.argv) == 1:
         path = os.getcwd()
-        print  ('.')
+        print('.')
         tree(path, '')
-        print  (num_dirs, 'directories,', num_files, 'files')
+        print(num_dirs, 'directories,', num_files, 'files')
     else:
-        print  ('Invalid Input!')
+        print('Invalid Input!')
