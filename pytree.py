@@ -37,11 +37,13 @@ if __name__ == '__main__':
         path = sys.argv[1]
         print(path)
         tree(path, '')
+        print('')
         print(num_dirs, 'directories,', num_files, 'files')
     elif len(sys.argv) == 1:
         path = os.getcwd()
         print('.')
         tree(path, '')
+        print('')
         print(num_dirs, 'directories,', num_files, 'files')
     else:
         print('Invalid Input!')
