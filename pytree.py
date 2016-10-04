@@ -5,8 +5,8 @@ import os
 num_dirs = 0
 num_files = 0
 
-def tree(r, level):
 
+def tree(r, level):
 
     global num_dirs
     global num_files
