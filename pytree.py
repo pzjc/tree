@@ -5,7 +5,6 @@ import os
 num_dirs = 0
 num_files = 0
 
-
 def tree(r, level):
 
     global num_dirs
@@ -21,17 +20,17 @@ def tree(r, level):
             if os.path.isdir(r + '/' + item):
                 num_dirs = num_dirs + 1
                 if i == len(lst2):
-                    print('{}`-- {}'.format(level, item))
+                    print('{}└── {}'.format(level, item))
                     tree((r + '/' + item), level + '    ')
                 else:
-                    print('{}|-- {}'.format(level, item))
-                    tree((r + '/' + item), level + '|   ')
+                    print('{}├── {}'.format(level, item))
+                    tree((r + '/' + item), level + '│   ')
             else:
                 num_files = num_files + 1
                 if i == len(lst2):
-                    print('{}`-- {}'.format(level, item))
+                    print('{}└── {}'.format(level, item))
                 else:
-                    print('{}|-- {}'.format(level, item))
+                    print('{}├── {}'.format(level, item))
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         path = sys.argv[1]
