@@ -7,6 +7,7 @@ num_files = 0
 
 def tree(r, level):
 
+
     global num_dirs
     global num_files
     lst1 = os.listdir(r)
